@@ -11,7 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Dungeons/BasementEnd.unity
     guid: 2aa84f25d15462d4f91ee80e11df1866
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Dungeons/BasementMain.unity
     guid: 700c58b27ef703644b8f6e935aa16fd6
   - enabled: 1
@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Dungeons/BasementBasic1.unity
     guid: c04c7402b6298d647847340390d19e6d
+  - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: d4b2613f484444943a441951fa2fffe5
   m_configObjects: {}
