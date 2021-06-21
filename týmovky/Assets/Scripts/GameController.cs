@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class GameController : MonoBehaviour
     private static int maxHealth = 6;
     private static float moveSpeed = 5;
     private static float fireRate = 0.5f;
+    GameObject player;
 
     public static float Health { get => health; set => health = value; }
     public static int MaxHealth { get => maxHealth; set => maxHealth = value; }
@@ -18,6 +20,13 @@ public class GameController : MonoBehaviour
     public static float FireRate { get => fireRate; set => fireRate = value; }
 
     public Text healthText;
+
+    void Start()
+    {
+        health = 6;
+        moveSpeed = 5;
+        fireRate = 0.5f;
+    }
 
     private void Awake()
     {
@@ -38,7 +47,7 @@ public class GameController : MonoBehaviour
 
         if(Health <= 0)
         {
-            KillPlayer();
+            KillPlayer(GameObject.FindGameObjectWithTag("Player"));
         }
 
     }
@@ -58,8 +67,9 @@ public class GameController : MonoBehaviour
         fireRate -= rate;
     }
 
-    private static void KillPlayer()
+    private static void KillPlayer(GameObject player)
     {
-
+        Object.Destroy(player);
+        SceneManager.LoadScene("Menu");
     }
 }

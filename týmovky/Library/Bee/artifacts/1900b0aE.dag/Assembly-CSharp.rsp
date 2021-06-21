@@ -356,7 +356,6 @@
 "Assets/Scripts/GameController.cs"
 "Assets/Scripts/HealthUIController.cs"
 "Assets/Scripts/ItemSpawner.cs"
-"Assets/Scripts/LevelLoaderScript.cs"
 "Assets/Scripts/MainMenu.cs"
 "Assets/Scripts/ObjectRoomSpawner.cs"
 "Assets/Scripts/PlayerController.cs"

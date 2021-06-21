@@ -19,8 +19,10 @@ public class EnemyController : MonoBehaviour
     public float speed;
     public float attackRange;
     public float coolDown;
+    public float enemyHealth = 3;
+    private float EnemyHealth = 3;
     private bool chooseDir = false;
-    private bool dead = false;
+    //private bool dead = false;
     private bool coolDownAttack = false;
     public bool notInRoom = false;
     private Vector3 randomDir;
@@ -28,6 +30,7 @@ public class EnemyController : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        EnemyHealth = enemyHealth;
     }
 
     void Update()
@@ -109,8 +112,14 @@ public class EnemyController : MonoBehaviour
 
     public void Death()
     {
+        EnemyHealth -= 1;
         RoomController.instance.StartCoroutine(RoomController.instance.RoomCoroutine());
-        Destroy(gameObject);
+
+        if (EnemyHealth <= 0)
+        {
+            Destroy(gameObject);
+        }
+
     }
 
     void Attack()

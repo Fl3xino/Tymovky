@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Door : MonoBehaviour
 {
     public enum DoorType
     {
-        left, right, top, bottom
+        left, right, top, bottom, trapdoor
     }
 
     public DoorType doorType;
@@ -37,6 +38,9 @@ public class Door : MonoBehaviour
                     break;
                 case DoorType.top:
                     player.transform.position = new Vector2(transform.position.x, transform.position.y + widthOffset);
+                    break;
+                case DoorType.trapdoor:
+                    SceneManager.LoadScene("Menu");
                     break;
             }
         }

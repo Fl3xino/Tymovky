@@ -124,8 +124,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentState: 0
-  range: 8
-  speed: 1
+  range: 20
+  speed: 2
   attackRange: 1
-  coolDown: 3.5
+  coolDown: 2
+  enemyHealth: 3
   notInRoom: 0
